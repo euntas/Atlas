@@ -12,5 +12,4 @@
 #include <tinyxml2.h>
 #include <afxcontrolbars.h>
 #include <vector>
-
 #endif //PCH_H

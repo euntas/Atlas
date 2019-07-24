@@ -188,6 +188,7 @@ void CMainFrame::OnUpdateApplicationLook(CCmdUI* pCmdUI)
 
 void CMainFrame::LoadTexture(TCHAR* InPath)
 {
+	mRawImgName = InPath;
 	mRawImg.Load(InPath);
 }
 
@@ -253,4 +254,9 @@ BOOL CMainFrame::OnEraseBkgnd(CDC* pDC)
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
 	return true;
 	//return CFrameWnd::OnEraseBkgnd(pDC);
+}
+
+CString CMainFrame::getRawImgName()
+{
+	return mRawImgName;
 }

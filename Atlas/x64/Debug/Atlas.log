@@ -1,0 +1,24 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(438,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  pch.cpp
+  Atlas.cpp
+  atlaslist.cpp
+  ChildView.cpp
+C:\Users\a\source\repos\Atlas\Atlas\ChildView.cpp(69,59): warning C4244:  '*=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MainFrm.cpp
+C:\Users\a\source\repos\Atlas\Atlas\ChildView.cpp(71,58): warning C4244:  '*=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\a\source\repos\Atlas\Atlas\MainFrm.cpp(237,57): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+C:\Users\a\source\repos\Atlas\Atlas\MainFrm.cpp(237,25): warning C4244:  '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+Atlas.obj : error LNK2019: "public: class tinyxml2::XMLNode * __cdecl tinyxml2::XMLNode::InsertEndChild(class tinyxml2::XMLNode *)" (?InsertEndChild@XMLNode@tinyxml2@@QEAAPEAV12@PEAV12@@Z) 외부 기호(참조 위치: "public: class tinyxml2::XMLNode * __cdecl tinyxml2::XMLNode::LinkEndChild(class tinyxml2::XMLNode *)" (?LinkEndChild@XMLNode@tinyxml2@@QEAAPEAV12@PEAV12@@Z) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: class tinyxml2::XMLNode * __cdecl tinyxml2::XMLNode::InsertFirstChild(class tinyxml2::XMLNode *)" (?InsertFirstChild@XMLNode@tinyxml2@@QEAAPEAV12@PEAV12@@Z) 외부 기호(참조 위치: "protected: void __cdecl CAtlasApp::OnFileOpen(void)" (?OnFileOpen@CAtlasApp@@IEAAXXZ) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: void __cdecl tinyxml2::XMLAttribute::SetAttribute(char const *)" (?SetAttribute@XMLAttribute@tinyxml2@@QEAAXPEBD@Z) 외부 기호(참조 위치: "public: void __cdecl tinyxml2::XMLElement::SetAttribute(char const *,char const *)" (?SetAttribute@XMLElement@tinyxml2@@QEAAXPEBD0@Z) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: void __cdecl tinyxml2::XMLAttribute::SetAttribute(int)" (?SetAttribute@XMLAttribute@tinyxml2@@QEAAXH@Z) 외부 기호(참조 위치: "public: void __cdecl tinyxml2::XMLElement::SetAttribute(char const *,int)" (?SetAttribute@XMLElement@tinyxml2@@QEAAXPEBDH@Z) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: void __cdecl tinyxml2::XMLAttribute::SetAttribute(double)" (?SetAttribute@XMLAttribute@tinyxml2@@QEAAXN@Z) 외부 기호(참조 위치: "public: void __cdecl tinyxml2::XMLElement::SetAttribute(char const *,double)" (?SetAttribute@XMLElement@tinyxml2@@QEAAXPEBDN@Z) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "private: class tinyxml2::XMLAttribute * __cdecl tinyxml2::XMLElement::FindOrCreateAttribute(char const *)" (?FindOrCreateAttribute@XMLElement@tinyxml2@@AEAAPEAVXMLAttribute@2@PEBD@Z) 외부 기호(참조 위치: "public: void __cdecl tinyxml2::XMLElement::SetAttribute(char const *,char const *)" (?SetAttribute@XMLElement@tinyxml2@@QEAAXPEBD0@Z) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: __cdecl tinyxml2::XMLDocument::XMLDocument(bool,enum tinyxml2::Whitespace)" (??0XMLDocument@tinyxml2@@QEAA@_NW4Whitespace@1@@Z) 외부 기호(참조 위치: "protected: void __cdecl CAtlasApp::OnFileOpen(void)" (?OnFileOpen@CAtlasApp@@IEAAXXZ) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: enum tinyxml2::XMLError __cdecl tinyxml2::XMLDocument::SaveFile(char const *,bool)" (?SaveFile@XMLDocument@tinyxml2@@QEAA?AW4XMLError@2@PEBD_N@Z) 외부 기호(참조 위치: "protected: void __cdecl CAtlasApp::OnFileOpen(void)" (?OnFileOpen@CAtlasApp@@IEAAXXZ) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: class tinyxml2::XMLElement * __cdecl tinyxml2::XMLDocument::NewElement(char const *)" (?NewElement@XMLDocument@tinyxml2@@QEAAPEAVXMLElement@2@PEBD@Z) 외부 기호(참조 위치: "protected: void __cdecl CAtlasApp::OnFileOpen(void)" (?OnFileOpen@CAtlasApp@@IEAAXXZ) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: class tinyxml2::XMLComment * __cdecl tinyxml2::XMLDocument::NewComment(char const *)" (?NewComment@XMLDocument@tinyxml2@@QEAAPEAVXMLComment@2@PEBD@Z) 외부 기호(참조 위치: "protected: void __cdecl CAtlasApp::OnFileOpen(void)" (?OnFileOpen@CAtlasApp@@IEAAXXZ) 함수)에서 확인하지 못했습니다.
+Atlas.obj : error LNK2019: "public: class tinyxml2::XMLDeclaration * __cdecl tinyxml2::XMLDocument::NewDeclaration(char const *)" (?NewDeclaration@XMLDocument@tinyxml2@@QEAAPEAVXMLDeclaration@2@PEBD@Z) 외부 기호(참조 위치: "protected: void __cdecl CAtlasApp::OnFileOpen(void)" (?OnFileOpen@CAtlasApp@@IEAAXXZ) 함수)에서 확인하지 못했습니다.
+C:\Users\a\source\repos\Atlas\Atlas\Lib\tinyxml2.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
+C:\Users\a\source\repos\Atlas\Atlas\Output\Atlas.exe : fatal error LNK1120: 11개의 확인할 수 없는 외부 참조입니다.

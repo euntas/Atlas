@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root filename="Tulips.jpg">
+    <img>
+        <AtlasInfo name="0" left="67" top="438" right="167" bottom="538"/>
+    </img>
+    <img>
+        <AtlasInfo name="1" left="383" top="228" right="483" bottom="328"/>
+    </img>
+    <img>
+        <AtlasInfo name="2" left="0" top="0" right="100" bottom="100"/>
+    </img>
+</Root>

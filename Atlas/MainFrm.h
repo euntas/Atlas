@@ -14,6 +14,12 @@ public:
 
 	}
 
+	AtlasInfo(CString name, int left, int top, int right, int bottom)
+		: UV(left, top, right, bottom), Name(name)
+	{
+
+	}
+
 	CString	Name;
 	CRect	UV;
 };
@@ -52,6 +58,7 @@ public:
 	void SelectAtlas(CPoint pt);
 	void MoveSelect(CPoint pt);
 	void SizeSelect(CPoint pt);
+	CString getRawImgName();
 
 protected:  // 컨트롤 모음이 포함된 멤버입니다.
 	CToolBar		m_wndToolBar;
@@ -59,6 +66,7 @@ protected:  // 컨트롤 모음이 포함된 멤버입니다.
 	CImage			mRawImg;
 	std::vector<AtlasInfo>	mAtlasVec;
 	AtlasInfo* mSel;
+	CString			mRawImgName;
 
 // 생성된 메시지 맵 함수
 protected:

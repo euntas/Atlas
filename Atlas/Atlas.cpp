@@ -151,31 +151,49 @@ void CAtlasApp::OnFileOpen()
 	// TODO: 여기에 명령 처리기 코드를 추가합니다.
 	if (CMainFrame * pMainFrame = static_cast<CMainFrame*>(AfxGetMainWnd()))
 	{
-		// pMainFrame->이미지 이름
-
-		/*
-		TODO.
-		<img name="">
-			<img name= "", left ="" ...></img>
-		</img>
-		*/
 		CImage& Raw = pMainFrame->GetRawImage();
 		auto& Vec = pMainFrame->GetAtlasVec();
-		//CFileFind asdf;
-		//CFile a;
-		//a.Open();
-		//a.Close();
-		//a.GetFilePath(); // 풀패스
-		//a.GetFileTitle(); // 이름만
-		//a.GetFileName(); // 이름 + 확장자
-		Vec.begin()->UV.left / Raw.GetWidth();
-		Vec.begin()->UV.right / Raw.GetWidth();
-		Vec.begin()->UV.top / Raw.GetHeight();
-		Vec.begin()->UV.bottom / Raw.GetHeight();
-		// 0~1 실수
 		
+		tinyxml2::XMLDocument* doc = new tinyxml2::XMLDocument();
+		doc->LoadFile("gameinfo.xml");
+
+		tinyxml2::XMLElement* Root = doc->RootElement();
+		tinyxml2::XMLElement* imgNode;
+		tinyxml2::XMLElement* AtlasInfoNode;
+		
+		/*CString originpath = _T("C:\\Users\\a\\source\\repos\\Atlas\\Atlas\\");
+		USES_CONVERSION;
+		TCHAR* bgimgpath = T2CA(originpath) + Root->Attribute("filename");*/
+		//char* finame = "Tulips.jpg";
+		
+
+		// do stuff that may cause exceptions
+		
+
+		for (imgNode = (tinyxml2::XMLElement*)Root->FirstChildElement("img"); imgNode != 0; imgNode = (tinyxml2::XMLElement*)imgNode->NextSibling())
+		{
+			AtlasInfoNode = (tinyxml2::XMLElement*)imgNode->FirstChildElement("AtlasInfo");
+
+			const char* name = AtlasInfoNode->Attribute("name");
+			int left = atoi(AtlasInfoNode->Attribute("left"));
+			int right = atoi(AtlasInfoNode->Attribute("right"));
+			int top = atoi(AtlasInfoNode->Attribute("top"));
+			int bottom = atoi(AtlasInfoNode->Attribute("bottom"));
+
+			USES_CONVERSION;
+			Vec.emplace_back(AtlasInfo(A2T(name), left, top, right, bottom));
+		}
+
+
+		//CStdioFile fileTest;
+		//CFileException ex;
+		//if (!fileTest.Open(Root->Attribute("filename"), CFile::modeWrite, &ex))
+		//{
+		//	ex.ReportError();
+		//	fileTest.Abort();   // close file safely and quietly
+		//}
+		pMainFrame->LoadTexture(L"C:\\Users\\Public\\Pictures\\Sample Pictures\\Tulips.jpg");
 	}
-	
 }
 
 
@@ -184,8 +202,53 @@ void CAtlasApp::OnFileSave()
 	// TODO: 여기에 명령 처리기 코드를 추가합니다.
 	if (CMainFrame * pMainFrame = static_cast<CMainFrame*>(AfxGetMainWnd()))
 	{
-		// pMainFrame->이미지 이름
-		pMainFrame->GetAtlasVec();
+		CImage& Raw = pMainFrame->GetRawImage();
+		auto& Vec = pMainFrame->GetAtlasVec();
+
+		CStdioFile fileTest;
+
+		// do stuff that may cause exceptions
+		CFileException ex;
+		if (!fileTest.Open(pMainFrame->getRawImgName(), CFile::modeWrite, &ex))
+		{
+			ex.ReportError();
+			fileTest.Abort();   // close file safely and quietly
+		}
+
+		tinyxml2::XMLDocument* doc = new tinyxml2::XMLDocument();
+		if (!doc)
+			return;
+
+		tinyxml2::XMLDeclaration* decl = doc->NewDeclaration();
+		doc->InsertFirstChild(decl);
+
+		tinyxml2::XMLElement* Root = doc->NewElement("Root");
+
+		USES_CONVERSION;
+		const char* filename = T2CA(fileTest.GetFileName());
+
+		Root->SetAttribute("filename", filename);
+		doc->LinkEndChild(Root);
+
+		int vecCnt = 0;
+		for (auto& it : Vec) {
+			tinyxml2::XMLElement* element = doc->NewElement("img");
+			Root->LinkEndChild(element);
+
+			tinyxml2::XMLElement* subelement = doc->NewElement("AtlasInfo");
+			element->LinkEndChild(subelement);
+			
+			subelement->SetAttribute("name", vecCnt);
+			subelement->SetAttribute("left", it.UV.left);
+			subelement->SetAttribute("top", it.UV.top);
+			subelement->SetAttribute("right", it.UV.right);
+			subelement->SetAttribute("bottom", it.UV.bottom);
+
+			vecCnt++;
+		}
+		
+		doc->SaveFile("gameinfo.xml");
+		fileTest.Close();
 	}
 }
 
