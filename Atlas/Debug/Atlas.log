@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(438,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Atlas.cpp
+C:\Users\inhahrd\source\repos\Atlas\Atlas\Atlas.cpp(171,24): warning C4552:  '/': 식의 결과가 사용되지 않습니다.
+C:\Users\inhahrd\source\repos\Atlas\Atlas\Atlas.cpp(172,25): warning C4552:  '/': 식의 결과가 사용되지 않습니다.
+C:\Users\inhahrd\source\repos\Atlas\Atlas\Atlas.cpp(173,23): warning C4552:  '/': 식의 결과가 사용되지 않습니다.
+C:\Users\inhahrd\source\repos\Atlas\Atlas\Atlas.cpp(174,26): warning C4552:  '/': 식의 결과가 사용되지 않습니다.
+  Atlas.vcxproj -> C:\Users\inhahrd\source\repos\Atlas\Atlas\Output\Atlas.exe
